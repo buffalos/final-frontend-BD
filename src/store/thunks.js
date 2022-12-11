@@ -33,6 +33,39 @@ export const fetchInstructorThunk = (id) => async (dispatch) => {
   }
 };
 
+//BAHTIJA {
+export const addInstructorThunk = (instructor) => async (dispatch) => {
+  try {
+    let res = await axios.post(`${path}/instructors`, instructor);
+    dispatch(ac.addInstructor(res.data));
+    return res.data;
+  } catch(err) {
+    console.error(err);
+  }
+};
+
+export const deleteInstructorThunk = instructorId => async dispatch => {
+  try {
+    await axios.delete(`${path}/instructors/${instructorId}`);
+    //delete succesful so change state with dispatch
+    dispatch(ac.deleteInstructor(instructorId));
+  } catch(err) {
+    console.error(err);
+  }
+};
+
+export const editInstructorThunk = instructor => async dispatch => {
+  try {
+    let res = await axios.put(`${path}/instructors/${instructor.id}`, instructor);
+    //res.data is the updated instructor object
+    dispatch(ac.editInstructor(res.data));
+  } catch(err) {
+    console.error(err);
+  }
+};
+
+// } BAHTIJA
+
 //All courses
 export const fetchAllCoursesThunk = () => async (dispatch) => {
   try {
