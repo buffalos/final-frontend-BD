@@ -8,6 +8,8 @@ import {
   InstructorContainer,
   CourseContainer,
   AllInstructorsContainer,
+  NewInstructorContainer,
+  EditInstructorContainer,
   AllCoursesContainer,
   NewCourseContainer,
   EditCourseContainer
