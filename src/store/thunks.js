@@ -97,6 +97,7 @@ export const deleteCourseThunk = courseId => async dispatch => {
   }
 };
 
+
 export const editCourseThunk = course => async dispatch => {
   try {
     let res = await axios.put(`${path}/courses/${course.id}`, course);

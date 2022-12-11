@@ -1,5 +1,6 @@
 import { FETCH_COURSE } from "../actions/actionTypes";
 
+
 const initialState = {
   instructor: {},
 };

@@ -11,7 +11,7 @@ class CourseContainer extends Component {
 
   render() {
     return (
-      <CourseView 
+      <CourseView
         course={this.props.course}
       />
     );
