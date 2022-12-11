@@ -3,7 +3,13 @@ import { Link } from "react-router-dom";
 
 const AllInstructorsView = (props) => {
   if (!props.allInstructors.length) {
-    return <div>There are no instructors.</div>;
+      return <div>
+          There are no instructors.
+          <Link to={`/newinstructor`}>
+            <button>Add New Instructor</button>
+          </Link>
+
+          </div>;
   }
 
   return (
