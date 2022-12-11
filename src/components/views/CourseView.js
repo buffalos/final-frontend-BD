@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
+//import { Redirect } from 'react-router-dom';
 
 const CourseView = (props) => {
-  const { course } = props;
+  let { course, handleClick } = props;
+
   return (
     <div>
       <h1>{course.title}</h1>
@@ -9,6 +11,8 @@ const CourseView = (props) => {
       <Link to={`/editcourse/${course.id}`}>Edit course information</Link>
       <br/>
       <Link to={`/courses`}>View all courses</Link>
+      <br/>
+       <button onClick={(e) => handleClick(e)}>Delete</button>
     </div>
   );
 

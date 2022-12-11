@@ -2,7 +2,7 @@ import { Component } from 'react';
 import { connect } from 'react-redux';
 
 
-import { 
+import {
   fetchAllCoursesThunk,
   deleteCourseThunk
 } from '../../store/thunks';
@@ -12,13 +12,14 @@ import AllCoursesView from '../views/AllCoursesView';
 class AllCoursesContainer extends Component {
     componentDidMount() {
       this.props.fetchAllCourses();
+      console.log("this.props = " + this.props);
     }
     render(){
         return(
             <div>
-                <AllCoursesView 
+                <AllCoursesView
                   courses={this.props.allCourses}
-                  deleteCourse={this.props.deleteCourse}   
+                  deleteCourse={this.props.deleteCourse}
                 />
             </div>
         )
