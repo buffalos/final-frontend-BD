@@ -8,7 +8,7 @@ const InstructorView = (props) => {
 
   return (
     <div>
-      <h1>{instructor.firstname}</h1>
+      <h1>{instructor.firstname + " " + instructor.lastname}</h1>
       <h3>{instructor.department}</h3>
       <div style={{display: "flex", flexDirection: "row", justifyContent: "space-evenly"}}>
         <div>Assigned courses:
@@ -36,7 +36,7 @@ const InstructorView = (props) => {
 
       </div>
 
-
+      <Link to={`/editinstructor/${instructor.id}`}>Edit instructor information</Link>
     </div>
   );
 
