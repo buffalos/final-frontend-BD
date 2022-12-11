@@ -67,20 +67,16 @@ class EditInstructorContainer extends Component {
 
         return (
             <form style={{textAlign: 'center'}} onSubmit={(e) => this.handleSubmit(e)}>
-            <label style= {{color:'#11153e', fontWeight: 'bold'}}>Title: </label>
+            <label style= {{color:'#11153e', fontWeight: 'bold'}}>First Name: </label>
             <input type="text" name="firstname" value={this.state.firstname} onChange ={(e) => this.handleChange(e)}/>
             <br/>
 
-            <label style= {{color:'#11153e', fontWeight: 'bold'}}>Title: </label>
+            <label style= {{color:'#11153e', fontWeight: 'bold'}}>Last Name: </label>
             <input type="text" name="lastname" value={this.state.lastname} onChange ={(e) => this.handleChange(e)}/>
             <br/>
 
-            <label style= {{color:'#11153e', fontWeight: 'bold'}}>Title: </label>
+            <label style= {{color:'#11153e', fontWeight: 'bold'}}>Department: </label>
             <input type="text" name="department" value={this.state.department} onChange ={(e) => this.handleChange(e)}/>
-            <br/>
-
-            <label style={{color:'#11153e', fontWeight: 'bold'}}>instructorId: </label>
-            <input type="text" name="instructorId" value={this.state.instructorId} onChange={(e) => this.handleChange(e)} />
             <br/>
 
             <button type="submit">

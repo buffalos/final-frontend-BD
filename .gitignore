@@ -1,7 +1,17 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+/node_modules
+=======
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
 /node_modules
+=======
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+>>>>>>> c73c7de831a5ee1e358a80849a9a832e10d56bd0
 /.pnp
 .pnp.js
 
@@ -21,3 +31,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+<<<<<<< HEAD
+>>>>>>> d18081bba7756e18439089b3df9307ceabf0353f
+=======
+>>>>>>> c73c7de831a5ee1e358a80849a9a832e10d56bd0
