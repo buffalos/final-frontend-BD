@@ -20,6 +20,11 @@ const AllInstructorsView = (props) => {
         );
 
       })}
+
+      <Link to={`/newinstructor`}>
+        <button>Add New Instructor</button>
+      </Link>
+
     </div>
   );
 };
