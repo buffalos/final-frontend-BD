@@ -14,7 +14,8 @@ class EditInstructorContainer extends Component {
           department: "",
           instructorId: null,
           redirect: false,
-          redirectId: null
+          redirectId: null,
+          error: ""
         };
     }
 
@@ -38,6 +39,19 @@ class EditInstructorContainer extends Component {
     handleSubmit = event => {
         event.preventDefault();
         //get new info for instructor from form input
+        if(this.state.firstname==="" && this.state.lastname===""){
+          this.setState({error:"First and last name are required"});
+          return;
+        }
+        if(this.state.firstname===""){
+          this.setState({error:"First name is required"});
+          return;
+        }
+        if(this.state.lastname===""){
+          this.setState({error:"Last name is required"});
+          return;
+        }
+
         let instructor = {
             id: this.props.instructor.id,
             firstname: this.state.firstname,
@@ -50,7 +64,8 @@ class EditInstructorContainer extends Component {
 
         this.setState({
           redirect: true,
-          redirectId: this.props.instructor.id
+          redirectId: this.props.instructor.id,
+          error: ""
         });
 
     }
@@ -82,7 +97,7 @@ class EditInstructorContainer extends Component {
             <button type="submit">
               Submit
             </button>
-
+            {this.state.error!=="" && <p>{this.state.error}</p>}
           </form>
         )
     }
