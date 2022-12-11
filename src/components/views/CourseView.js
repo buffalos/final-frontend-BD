@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const CourseView = (props) => {
-  const { course } = props;
+  const {course} = props;
   return (
     <div>
       <h1>{course.title}</h1>

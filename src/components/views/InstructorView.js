@@ -39,7 +39,9 @@ const InstructorView = (props) => {
       </div>
 
       <Link to={`/editinstructor/${instructor.id}`}>Edit instructor information</Link>
-    </div>
+      <br></br>
+{/*      <button onClick={() => deleteInstructor(instructor.id)}>Delete Instructor</button>
+*/}    </div>
   );
 } else {
     return (
@@ -66,6 +68,8 @@ const InstructorView = (props) => {
           </div>
 
           <Link to={`/editinstructor/${instructor.id}`}>Edit instructor information</Link>
+          <br></br>
+          {/* <button onClick={() => deleteInstructor(instructor.id)}>Delete Instructor</button> */} 
         </div>
     );
   }
