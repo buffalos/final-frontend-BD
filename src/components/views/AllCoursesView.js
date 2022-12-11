@@ -13,7 +13,7 @@ const AllCoursesView = (props) => {
     </div>
     );
   }
-  
+
   return (
     <div>
       {courses.map((course) => {
