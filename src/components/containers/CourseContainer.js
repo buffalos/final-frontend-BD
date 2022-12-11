@@ -18,14 +18,10 @@ class CourseContainer extends Component {
         console.log("this.props.match.params.id = " + this.props.match.params.id);
     }
 
-    handleClick = event => {
-      //event.preventDefault();
-      //get new info for course from form input
-      let courseid = {
-          id: this.props.course.id,
-      };
+    handleClick = async event => {
+      event.preventDefault();
 
-      this.props.deleteCourse(courseid);
+      await this.props.deleteCourse(this.props.match.params.id);
       //this.props.r = true;
 
       this.setState({
