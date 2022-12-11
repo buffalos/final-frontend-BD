@@ -5,9 +5,9 @@ const InstructorView = (props) => {
   const {instructor, editCourse, allCourses} = props;
   let assignedCourses = allCourses.filter(course => course.instructorId===instructor.id);
   let availableCourses = allCourses.filter(course => course.instructorId!==instructor.id);
-  
+
   return (
-    <div>      
+    <div>
       <h1>{instructor.firstname}</h1>
       <h3>{instructor.department}</h3>
       <div style={{display: "flex", flexDirection: "row", justifyContent: "space-evenly"}}>
@@ -36,7 +36,7 @@ const InstructorView = (props) => {
 
       </div>
 
-  
+
     </div>
   );
 
