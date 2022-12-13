@@ -35,6 +35,12 @@ class EditCourseContainer extends Component {
 
     handleSubmit = event => {
         event.preventDefault();
+
+        if(this.state.title===""){
+          this.setState({error:"Title field is required"});
+          return;
+        }
+
         //get new info for course from form input
         let course = {
             id: this.props.course.id,
@@ -47,7 +53,8 @@ class EditCourseContainer extends Component {
 
         this.setState({
           redirect: true, 
-          redirectId: this.props.course.id
+          redirectId: this.props.course.id,
+          error: ""
         });
 
     }
@@ -79,7 +86,7 @@ class EditCourseContainer extends Component {
             <button type="submit">
               Submit
             </button>
-
+            {this.state.error!=="" && <p>{this.state.error}</p>}
           </form>
         )
     }

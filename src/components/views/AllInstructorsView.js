@@ -21,10 +21,11 @@ const AllInstructorsView = (props) => {
         return (
           <div key={instructor.id}>
           <Link to={`/instructor/${instructor.id}`}>
-            <h1>{name}</h1>
+            <span style={{marginRight: 10}}>{name}</span>
           </Link>
-          <p>{instructor.department}</p>
-          <button onClick={() => props.deleteInstructor(instructor.id)}>Delete</button>
+          <button  onClick={() => props.deleteInstructor(instructor.id)}>x</button>
+          <p style={{fontSize:10}}>{instructor.department}</p>
+          
         </div>
         );
 
