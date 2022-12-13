@@ -23,7 +23,7 @@ const AllCoursesView = (props) => {
           <Link to={`/course/${course.id}`}>
             <h1>{title}</h1>
           </Link>
-          <button onClick={() => deleteCourse(course.id)}>Delete</button>
+          <button  onClick={() => deleteCourse(course.id)}>x</button>
           </div>
         );
       }

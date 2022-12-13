@@ -1,7 +1,9 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+//import { deleteInstructor } from "../../store/actions/actionCreators";
 
 const AllInstructorsView = (props) => {
+  
   if (!props.allInstructors.length) {
       return <div>
           There are no instructors.
@@ -19,9 +21,11 @@ const AllInstructorsView = (props) => {
         return (
           <div key={instructor.id}>
           <Link to={`/instructor/${instructor.id}`}>
-            <h1>{name}</h1>
+            <span style={{marginRight: 10}}>{name}</span>
           </Link>
-          <p>{instructor.department}</p>
+          <button  onClick={() => props.deleteInstructor(instructor.id)}>x</button>
+          <p style={{fontSize:10}}>{instructor.department}</p>
+          
         </div>
         );
 
