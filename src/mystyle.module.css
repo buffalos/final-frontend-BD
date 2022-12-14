@@ -1,0 +1,28 @@
+.instructor {
+    color: DodgerBlue;
+    padding: 20px;
+    font-family: Arial;
+    text-align: center;
+    margin-right: 10;
+  }
+
+.button{
+    transition-duration: 0.4s;
+}
+
+.button:hover{
+    background-color: pink;
+    color: white;
+}
+
+.errormessage{
+    color: red;
+}
+
+.majorlink{
+    color: green;
+}
+
+.pageheader{
+    color: blue;
+}

@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import styles from '../../mystyle.module.css'; 
 //import { deleteInstructor } from "../../store/actions/actionCreators";
 
 const AllInstructorsView = (props) => {
@@ -21,9 +22,9 @@ const AllInstructorsView = (props) => {
         return (
           <div key={instructor.id}>
           <Link to={`/instructor/${instructor.id}`}>
-            <span style={{marginRight: 10}}>{name}</span>
+            <span className={styles.instructor}>{name}</span>
           </Link>
-          <button  onClick={() => props.deleteInstructor(instructor.id)}>x</button>
+          <button className={styles.button}  onClick={() => props.deleteInstructor(instructor.id)}>x</button>
           <p style={{fontSize:10}}>{instructor.department}</p>
           
         </div>
