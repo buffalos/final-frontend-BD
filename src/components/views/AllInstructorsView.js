@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import styles from '../../mystyle.module.css'; 
 //import { deleteInstructor } from "../../store/actions/actionCreators";
 import styles from '../../mystyle.module.css';
 
