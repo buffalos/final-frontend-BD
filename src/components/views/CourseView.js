@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import styles from '../../mystyle.module.css';
 //import { Redirect } from 'react-router-dom';
 
 const CourseView = (props) => {
@@ -12,7 +13,7 @@ const CourseView = (props) => {
       <br/>
       <Link to={`/courses`}>View all courses</Link>
       <br/>
-       <button onClick={(e) => handleClick(e)}>Delete</button>
+       <button onClick={(e) => handleClick(e)} className={styles.button}>Delete</button>
     </div>
   );
 

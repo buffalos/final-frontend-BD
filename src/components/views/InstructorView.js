@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import styles from '../../mystyle.module.css';
 
 
 const InstructorView = (props) => {
@@ -20,7 +21,7 @@ const InstructorView = (props) => {
             <Link to={`/course/${course.id}`}>
               <h4>{course.title}</h4>
             </Link>
-            <button onClick={() => editCourse({id:course.id, instructorId: null})}>x</button>
+            <button onClick={() => editCourse({id:course.id, instructorId: null})} className={styles.button}>x</button>
             </div>
           );
         })}</div>
@@ -31,7 +32,7 @@ const InstructorView = (props) => {
             <Link to={`/course/${course.id}`}>
               <h4>{course.title}</h4>
             </Link>
-            <button onClick={() => editCourse({id:course.id, instructorId: instructor.id})}>+</button>
+            <button onClick={() => editCourse({id:course.id, instructorId: instructor.id})} className={styles.button}>+</button>
             </div>
           );
         })}</div>
@@ -40,7 +41,7 @@ const InstructorView = (props) => {
 
       <Link to={`/editinstructor/${instructor.id}`}>Edit instructor information</Link>
       <br></br>
-      <button onClick={(e) => handleClick(e)}>Delete Instructor</button>
+      <button onClick={(e) => handleClick(e)} className={styles.button}>Delete Instructor</button>
       </div>
   );
 } else {
@@ -60,7 +61,7 @@ const InstructorView = (props) => {
                 <Link to={`/course/${course.id}`}>
                   <h4>{course.title}</h4>
                 </Link>
-                <button onClick={() => editCourse({id:course.id, instructorId: instructor.id})}>+</button>
+                <button onClick={() => editCourse({id:course.id, instructorId: instructor.id})} className={styles.button}>+</button>
                 </div>
               );
             })}</div>
@@ -69,7 +70,7 @@ const InstructorView = (props) => {
 
           <Link to={`/editinstructor/${instructor.id}`}>Edit instructor information</Link>
           <br></br>
-          <button onClick={(e) => handleClick(e)}>Delete Instructor</button>
+          <button onClick={(e) => handleClick(e)} className={styles.button}>Delete Instructor</button>
         </div>
     );
   }

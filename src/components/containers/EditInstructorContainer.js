@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
 import { fetchInstructorThunk, editInstructorThunk } from '../../store/thunks';
+import styles from '../../mystyle.module.css';
 
 
 class EditInstructorContainer extends Component {
@@ -91,7 +92,7 @@ class EditInstructorContainer extends Component {
             <input type="text" name="department" value={this.state.department} onChange ={(e) => this.handleChange(e)}/>
             <br/>
 
-            <button type="submit">
+            <button type="submit" className={styles.button}>
               Submit
             </button>
             {this.state.error!=="" && <p>{this.state.error}</p>}

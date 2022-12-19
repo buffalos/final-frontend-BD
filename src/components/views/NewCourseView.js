@@ -1,4 +1,4 @@
-
+import styles from '../../mystyle.module.css';
 
 
 const NewCourseView = (props) => {
@@ -28,7 +28,7 @@ const NewCourseView = (props) => {
           <br/>
           <br/>
 
-          <button type="submit">
+          <button type="submit" className={styles.button}>
             Submit
           </button>
           <br/>
