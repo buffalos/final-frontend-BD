@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
 import { fetchInstructorThunk, editInstructorThunk } from '../../store/thunks';
+import styles from '../../mystyle.module.css';
 
 
 class EditInstructorContainer extends Component {
@@ -78,24 +79,33 @@ class EditInstructorContainer extends Component {
         }
 
         return (
+          <div>
+          <h2 className={styles.subtitle}>
+            Edit Instructor
+          </h2>
             <form style={{textAlign: 'center'}} onSubmit={(e) => this.handleSubmit(e)}>
             <label style= {{color:'#11153e', fontWeight: 'bold'}}>First Name: </label>
-            <input type="text" name="firstname" value={this.state.firstname} onChange ={(e) => this.handleChange(e)}/>
+            <input style= {{fontFamily: "Signika", borderRadius: "5px", borderColor: "pink"}} type="text" name="firstname" value={this.state.firstname} onChange ={(e) => this.handleChange(e)}/>
+            <br/>
             <br/>
 
             <label style= {{color:'#11153e', fontWeight: 'bold'}}>Last Name: </label>
-            <input type="text" name="lastname" value={this.state.lastname} onChange ={(e) => this.handleChange(e)}/>
+            <input style= {{fontFamily: "Signika", borderRadius: "5px", borderColor: "pink"}} type="text" name="lastname" value={this.state.lastname} onChange ={(e) => this.handleChange(e)}/>
+            <br/>
             <br/>
 
             <label style= {{color:'#11153e', fontWeight: 'bold'}}>Department: </label>
-            <input type="text" name="department" value={this.state.department} onChange ={(e) => this.handleChange(e)}/>
+            <input style= {{fontFamily: "Signika", borderRadius: "5px", borderColor: "pink"}} type="text" name="department" value={this.state.department} onChange ={(e) => this.handleChange(e)}/>
+            <br/>
             <br/>
 
-            <button type="submit">
+            <button type="submit" className={styles.button}>
+            <span style={{verticalAlign: "middle"}}class="material-symbols-outlined">check_small</span>
               Submit
             </button>
             {this.state.error!=="" && <p>{this.state.error}</p>}
           </form>
+          </div>
         )
     }
 }
