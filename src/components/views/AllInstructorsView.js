@@ -37,7 +37,7 @@ const AllInstructorsView = (props) => {
             <button onClick={() => props.deleteInstructor(instructor.id)} className={styles.buttondeladd}>
             <span style={{verticalAlign: "middle", fontSize: "17px"}} class="material-symbols-outlined">delete</span>
             </button>
-            <p className={styles.info}>{instructor.department}</p>
+            <p className={styles.dept}>{instructor.department}</p>
           
           </div>
         );
