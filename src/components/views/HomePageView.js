@@ -7,7 +7,7 @@ import styles from '../../mystyle.module.css';
 const HomePageView = () => {
   return (
     <div>
-      <h6 className={styles.title}>CUNY First</h6>
+      <h6 className={styles.hometitle}>CUNY First</h6>
       <Link to={'/instructors'} >
         <button className={styles.button}>
         <span class="material-symbols-outlined" style={{verticalAlign: "bottom", paddingRight: "8px"}}> groups </span>
@@ -15,7 +15,7 @@ const HomePageView = () => {
       </Link>
       
       <Link to={'/courses'} >
-        <button className={styles.button}>
+        <button className={styles.buttonmain}>
           <span class="material-symbols-outlined" style={{verticalAlign: "bottom", paddingRight: "8px"}}> library_books </span>
           All Courses </button>
       </Link>

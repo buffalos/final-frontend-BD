@@ -71,24 +71,32 @@ class EditCourseContainer extends Component {
         }
 
         return (
+          <div>
+          <h2 className={styles.subtitle}>
+            Edit Instructor
+          </h2>
             <form style={{textAlign: 'center'}} onSubmit={(e) => this.handleSubmit(e)}>
             <label style= {{color:'#11153e', fontWeight: 'bold'}}>Title: </label>
-            <input type="text" name="title" value={this.state.title} onChange ={(e) => this.handleChange(e)}/>
+            <input style= {{fontFamily: "Signika", borderRadius: "5px", borderColor: "pink"}} type="text" name="title" value={this.state.title} onChange ={(e) => this.handleChange(e)}/>
             <br/>
-
+            <br/>
             <label style={{color:'#11153e', fontWeight: 'bold'}}>Timeslot: </label>
-            <input type="text" name="timeslot" value={this.state.timeslot} onChange={(e) => this.handleChange(e)}/>
+            <input style= {{fontFamily: "Signika", borderRadius: "5px", borderColor: "pink"}} type="text" name="timeslot" value={this.state.timeslot} onChange={(e) => this.handleChange(e)}/>
             <br/>
-  
+            <br/>
+            
             <label style={{color:'#11153e', fontWeight: 'bold'}}>instructorId: </label>
-            <input type="text" name="instructorId" value={this.state.instructorId} onChange={(e) => this.handleChange(e)} />
+            <input style= {{fontFamily: "Signika", borderRadius: "5px", borderColor: "pink"}} type="text" name="instructorId" value={this.state.instructorId} onChange={(e) => this.handleChange(e)} />
+            <br/>
             <br/>
   
             <button type="submit" className={styles.button} >
+              <span style={{verticalAlign: "middle"}}class="material-symbols-outlined">check_small</span>
               Submit
             </button>
             {this.state.error!=="" && <p>{this.state.error}</p>}
           </form>
+          </div>
         )
     }
 }

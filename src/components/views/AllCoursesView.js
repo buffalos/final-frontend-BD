@@ -7,7 +7,7 @@ const AllCoursesView = (props) => {
   if (!courses.length) {
     return (
     <div>
-      <h6 className={styles.subtitle}>Courses</h6>
+      <h6 className={styles.title}>Courses</h6>
       <p>There are no courses.</p>
       <Link to={`/newcourse`}>
         <button className={styles.button}>Add New Course</button>
@@ -18,7 +18,7 @@ const AllCoursesView = (props) => {
 
   return (
     <div>
-      <h6 className={styles.subtitle}>Courses</h6>
+      <h6 className={styles.title}>Courses</h6>
       {courses.map((course) => {
         let title = course.title;
         return (

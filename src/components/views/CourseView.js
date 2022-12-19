@@ -7,13 +7,27 @@ const CourseView = (props) => {
 
   return (
     <div>
-      <h1>{course.title}</h1>
+      <h1 className={styles.title}>{course.title}</h1>
        {course.instructor ? <Link to={`/instructor/${course.instructor.id}`}><h3>{course.instructor.firstname + " " + course.instructor.lastname}</h3></Link>: <h3>Staff</h3>} 
-      <Link to={`/editcourse/${course.id}`}>Edit course information</Link>
+      <Link to={`/editcourse/${course.id}`}>
+      <button className={styles.buttonmain}>
+      <span style={{verticalAlign: "bottom", paddingRight: "5px", fontSize: "23px"}}class="material-symbols-outlined">edit</span>
+        Edit course information
+        </button>
+        </Link>
+
+       <button onClick={(e) => handleClick(e)} style={{marginLeft: "7px"}}className={styles.button}>
+       <span style={{verticalAlign: "bottom", paddingRight: "5px", fontSize: "23px"}}class="material-symbols-outlined">delete</span>
+        Delete Course</button>
+      
       <br/>
-      <Link to={`/courses`}>View all courses</Link>
-      <br/>
-       <button onClick={(e) => handleClick(e)} className={styles.button}>Delete</button>
+        <Link to={`/courses`}>
+      <button className={styles.button}>
+      <span class="material-symbols-outlined" style={{verticalAlign: "bottom", paddingRight: "8px"}}> library_books </span>
+      View all courses
+        </button>
+        </Link>
+        
     </div>
   );
 
