@@ -10,8 +10,9 @@ const AllInstructorsView = (props) => {
       <div>
         <h6 className={styles.title}>Instructors</h6>
         There are no instructors.
+        <br/>
         <Link to={`/newinstructor`}>
-          <button className={styles.button}>
+          <button className={styles.buttonmain}>
           <span style={{verticalAlign: "bottom", paddingRight: 5}}class="material-symbols-outlined">person_add</span>
             Add New Instructor</button>
         </Link>
@@ -37,7 +38,7 @@ const AllInstructorsView = (props) => {
             <button onClick={() => props.deleteInstructor(instructor.id)} className={styles.buttondeladd}>
             <span style={{verticalAlign: "middle", fontSize: "17px"}} class="material-symbols-outlined">delete</span>
             </button>
-            <p className={styles.info}>{instructor.department}</p>
+            <p className={styles.dept}>{instructor.department}</p>
           
           </div>
         );

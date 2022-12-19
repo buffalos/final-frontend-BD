@@ -13,6 +13,7 @@ class EditCourseContainer extends Component {
           title: "", 
           timeslot: "",
           instructorId: null, 
+          location: "",
           redirect: false, 
           redirectId: null
         };
@@ -24,6 +25,7 @@ class EditCourseContainer extends Component {
         this.setState({
             title: this.props.course.title, 
             timeslot: this.props.course.timeslot,
+            location: this.props.course.location, 
             instructorId: this.props.course.instructorId, 
         });
       }
@@ -47,6 +49,7 @@ class EditCourseContainer extends Component {
             id: this.props.course.id,
             title: this.state.title,
             timeslot: this.state.timeslot,
+            location: this.state.location,
             instructorId: this.state.instructorId
         };
         
@@ -85,10 +88,16 @@ class EditCourseContainer extends Component {
             <br/>
             <br/>
             
+            <label style={{color:'#11153e', fontWeight: 'bold'}}>Location: </label>
+            <input style= {{fontFamily: "Signika", borderRadius: "5px", borderColor: "pink"}} type="text" name="location" value={this.state.location} onChange={(e) => this.handleChange(e)} />
+            <br/>
+            <br/>
+
             <label style={{color:'#11153e', fontWeight: 'bold'}}>instructorId: </label>
             <input style= {{fontFamily: "Signika", borderRadius: "5px", borderColor: "pink"}} type="text" name="instructorId" value={this.state.instructorId} onChange={(e) => this.handleChange(e)} />
             <br/>
             <br/>
+
   
             <button type="submit" className={styles.button} >
               <span style={{verticalAlign: "middle"}}class="material-symbols-outlined">check_small</span>
