@@ -10,7 +10,9 @@ const AllCoursesView = (props) => {
       <h6 className={styles.title}>Courses</h6>
       <p>There are no courses.</p>
       <Link to={`/newcourse`}>
-        <button className={styles.button}>Add New Course</button>
+        <button className={styles.button}>
+        <span style={{verticalAlign: "middle", paddingRight: "8px"}} class="material-symbols-outlined">library_add</span>
+        Add New Course</button>
       </Link>
     </div>
     );

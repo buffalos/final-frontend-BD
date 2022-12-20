@@ -13,7 +13,7 @@ const AllInstructorsView = (props) => {
         <br/>
         <Link to={`/newinstructor`}>
           <button className={styles.buttonmain}>
-          <span style={{verticalAlign: "bottom", paddingRight: 5}}class="material-symbols-outlined">person_add</span>
+          <span style={{verticalAlign: "middle", paddingRight: 5}}class="material-symbols-outlined">person_add</span>
             Add New Instructor</button>
         </Link>
 
@@ -45,7 +45,7 @@ const AllInstructorsView = (props) => {
 
       <Link to={`/newinstructor`}>
         <button className={styles.buttonmain}>
-        <span style={{verticalAlign: "bottom", paddingRight: 5}}class="material-symbols-outlined">person_add</span>
+        <span style={{verticalAlign: "middle", paddingRight: 5}}class="material-symbols-outlined">person_add</span>
           Add New Instructor</button>
       </Link>
 

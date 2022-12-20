@@ -30,6 +30,7 @@ const NewCourseView = (props) => {
           <br/>
           <label> Instructor: </label>
           <select onChange={(e) => handleSelectChange(e)}>
+            <option value="staff">Staff</option>
               {instructors.map((instructor) => {
                 let name = `${instructor.firstname} ${instructor.lastname}`;
                 return (
