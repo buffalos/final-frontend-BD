@@ -72,6 +72,7 @@
     font-size: 50px;
     margin: 30px;
     font-weight: 700;
+    text-align: center;
 }
 
 .subtitle{
@@ -110,5 +111,57 @@
 .icon {
     vertical-align: middle;
 }
+/*
+.head{
 
+    align-items: center;
+    border: 1px dotted black;
+    background-color: pink;
+    color: white;
+    background-color: pink;
+
+    border-radius: 20px;
+    font-family: 'Signika', sans-serif;
+
+
+    font-weight: 700;
+    text-align: center;
+    justify-content: center;
+} */
+
+.head{
+    background-color: pink;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+
+.htest{
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+    color: white;
+    background-color: pink;
+}
+
+.buttont{
+    left: 0;
+    font-size: 18px;
+    /* top: 25px; */
+    position: absolute;
+}
+
+.buttontest{
+    font-family: 'Signika', sans-serif;
+    background-color: white;
+    font-size: 18px;
+    border: 2px solid pink;
+    border-radius: 15px;
+    transition-duration: 0.4s;
+    line-height: 1.47;
+    top: 3px;
+    position: absolute;
+}
 /* style={{verticalAlign: "middle"}} */

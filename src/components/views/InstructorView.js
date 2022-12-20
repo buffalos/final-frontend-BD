@@ -10,7 +10,13 @@ const InstructorView = (props) => {
   if (assignedCourses.length !== 0 ){
   return (
     <div>
-      <h1 className={styles.title}>{instructor.firstname + " " + instructor.lastname}</h1>
+    <div style={{position: "relative"}}>
+        <Link to={`/`}>
+          <span style={{color: "white",verticalAlign: "middle", margin: "20px", position: "absolute", left: 25}} class="material-symbols-outlined">home</span>
+        </Link>
+          <h1 className={styles.title}>{instructor.firstname + " " + instructor.lastname}</h1>
+      </div>
+
       <h3>{instructor.department}</h3>
       <div style={{display: "flex", flexDirection: "row", justifyContent: "space-evenly"}}>
         <div>Assigned courses:
@@ -60,7 +66,13 @@ const InstructorView = (props) => {
 } else {
     return (
         <div>
-          <h1 className={styles.title}>{instructor.firstname + " " + instructor.lastname}</h1>
+        <div style={{position: "relative"}}>
+            <Link to={`/`}>
+              <span style={{color: "white",verticalAlign: "middle", margin: "20px", position: "absolute", left: 25}} class="material-symbols-outlined">home</span>
+            </Link>
+              <h1 className={styles.title}>{instructor.firstname + " " + instructor.lastname}</h1>
+          </div>
+
           <h3>{instructor.department}</h3>
           <div style={{display: "flex", flexDirection: "row", justifyContent: "space-evenly"}}>
             <div>Assigned courses:

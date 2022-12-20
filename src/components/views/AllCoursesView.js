@@ -7,7 +7,13 @@ const AllCoursesView = (props) => {
   if (!courses.length) {
     return (
     <div>
-      <h6 className={styles.title}>Courses</h6>
+    <div style={{position: "relative"}}>
+        <Link to={`/`}>
+          <span style={{color: "white",verticalAlign: "middle", margin: "20px", position: "absolute", left: 25}} class="material-symbols-outlined">home</span>
+        </Link>
+         <h1 className={styles.title}>Courses</h1>
+      </div>
+
       <p>There are no courses.</p>
       <Link to={`/newcourse`}>
         <button className={styles.button}>
@@ -20,7 +26,13 @@ const AllCoursesView = (props) => {
 
   return (
     <div>
-      <h6 className={styles.title}>Courses</h6>
+    <div style={{position: "relative"}}>
+        <Link to={`/`}>
+          <span style={{color: "white",verticalAlign: "middle", margin: "20px", position: "absolute", left: 25}} class="material-symbols-outlined">home</span>
+        </Link>
+         <h1 className={styles.title}>Courses</h1>
+      </div>
+
       {courses.map((course) => {
         let title = course.title;
         return (
@@ -34,7 +46,7 @@ const AllCoursesView = (props) => {
           </div>
         );
       }
-      )}
+    )}
       <Link to={`/newcourse`}>
         <button className={styles.buttonmain}>
         <span style={{verticalAlign: "middle", paddingRight: "8px"}} class="material-symbols-outlined">library_add</span>

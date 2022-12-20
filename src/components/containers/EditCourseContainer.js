@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-
+import { Link } from "react-router-dom";
 import { fetchCourseThunk, editCourseThunk, fetchAllInstructorsThunk } from '../../store/thunks';
 import styles from '../../mystyle.module.css';
 
@@ -86,9 +86,15 @@ class EditCourseContainer extends Component {
 
         return (
           <div>
-          <h2 className={styles.subtitle}>
-            Edit Course
-          </h2>
+          <div style={{position: "relative"}}>
+              <Link to={`/`}>
+                <span style={{color: "white",verticalAlign: "middle", margin: "20px", position: "absolute", left: 25}} class="material-symbols-outlined">home</span>
+              </Link>
+              <h2 className={styles.subtitle}>
+                Edit Course
+              </h2>
+            </div>
+
             <form onSubmit={(e) => this.handleSubmit(e)}>
             <label> Title: </label>
             <input type="text" name="title" value={this.state.title} onChange ={(e) => this.handleChange(e)}/>

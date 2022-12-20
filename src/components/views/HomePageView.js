@@ -7,7 +7,7 @@ import styles from '../../mystyle.module.css';
 const HomePageView = () => {
   return (
     <div>
-      <h6 className={styles.hometitle}>CUNY First</h6>
+      <h1 className={styles.hometitle}>CUNY First</h1>
       <h2>Welcome!</h2>
       <br/>
       <h3>Choose a view:</h3>

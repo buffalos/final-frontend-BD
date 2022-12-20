@@ -7,7 +7,13 @@ const CourseView = (props) => {
 
   return (
     <div>
-      <h1 className={styles.title}>{course.title}</h1>
+    <div style={{position: "relative"}}>
+        <Link to={`/`}>
+          <span style={{color: "white",verticalAlign: "middle", margin: "20px", position: "absolute", left: 25}} class="material-symbols-outlined">home</span>
+        </Link>
+         <h1 className={styles.title}>{course.title}</h1>
+      </div>
+
        {course.instructor ? <Link to={`/instructor/${course.instructor.id}`}><h3>{course.instructor.firstname + " " + course.instructor.lastname}</h3></Link>: <h3>Staff</h3>}
        <div className={styles.info}>
         {course.timeslot ?<h3>{course.timeslot}</h3> : <h3>Timeslot TBA</h3>}

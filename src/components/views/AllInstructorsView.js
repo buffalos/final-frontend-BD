@@ -8,7 +8,12 @@ const AllInstructorsView = (props) => {
   if (!props.allInstructors.length) {
     return(
       <div>
-        <h6 className={styles.title}>Instructors</h6>
+      <div style={{position: "relative"}}>
+          <Link to={`/`}>
+            <span style={{color: "white",verticalAlign: "middle", margin: "20px", position: "absolute", left: 25}} class="material-symbols-outlined">home</span>
+          </Link>
+           <h1 className={styles.title}>Instructors</h1>
+        </div>
         There are no instructors.
         <br/>
         <Link to={`/newinstructor`}>
@@ -24,7 +29,12 @@ const AllInstructorsView = (props) => {
   return (
     <div>
 
-      <h6 className={styles.title}>Instructors</h6>
+    <div style={{position: "relative"}}>
+        <Link to={`/`}>
+          <span style={{color: "white",verticalAlign: "middle", margin: "20px", position: "absolute", left: 25}} class="material-symbols-outlined">home</span>
+        </Link>
+         <h1 className={styles.title}>Instructors</h1>
+      </div>
 
       {props.allInstructors.map((instructor) => {
         let name = instructor.firstname + " " + instructor.lastname;

@@ -1,5 +1,5 @@
 import styles from '../../mystyle.module.css';
-
+import { Link } from "react-router-dom";
 
 const NewInstructorView = (props) => {
   const {handleChange, handleSubmit, error } = props;
@@ -8,9 +8,15 @@ const NewInstructorView = (props) => {
     <div className="root">
       <div className="formContainer">
         <div className="formTitle">
-          <h2 className={styles.subtitle}>
-            New Instructor
-          </h2>
+        <div style={{position: "relative"}}>
+            <Link to={`/`}>
+              <span style={{color: "white",verticalAlign: "middle", margin: "20px", position: "absolute", left: 25}} class="material-symbols-outlined">home</span>
+            </Link>
+            <h2 className={styles.subtitle}>
+              New Instructor
+            </h2>
+          </div>
+
         </div>
         <form onSubmit={(e) => handleSubmit(e)}>
           <label>First Name: </label>
