@@ -12,24 +12,24 @@ const NewInstructorView = (props) => {
             New Instructor
           </h2>
         </div>
-        <form style={{textAlign: 'center'}} onSubmit={(e) => handleSubmit(e)}>
-          <label style= {{color:'#11153e', fontWeight: '600'}}>First Name: </label>
-          <input style= {{fontFamily: "Signika", borderRadius: "5px", borderColor: "pink"}} type="text" name="firstname" onChange ={(e) => handleChange(e)} />
+        <form onSubmit={(e) => handleSubmit(e)}>
+          <label>First Name: </label>
+          <input type="text" name="firstname" onChange ={(e) => handleChange(e)} />
           <br/>
           <br/>
 
-          <label style= {{color:'#11153e', fontWeight: '600'}}>Last Name: </label>
-          <input style= {{fontFamily: "Signika",borderRadius: "5px", borderColor: "pink"}} type="text" name="lastname" onChange ={(e) => handleChange(e)} />
+          <label>Last Name: </label>
+          <input type="text" name="lastname" onChange ={(e) => handleChange(e)} />
           <br/>
           <br/>
 
-          <label style= {{color:'#11153e', fontWeight: '600'}}>Department: </label>
-          <input style= {{fontFamily: "Signika", borderRadius: "5px", borderColor: "pink"}} type="text" name="department" onChange ={(e) => handleChange(e)} />
+          <label>Department: </label>
+          <input type="text" name="department" onChange ={(e) => handleChange(e)} />
           <br/>
           <br/>
 
-          <label style={{color:'#11153e', fontWeight: '600'}}>instructorId: </label>
-          <input style= {{fontFamily: "Signika", borderRadius: "5px", borderColor: "pink"}} type="text" name="instructorId" onChange={(e) => handleChange(e)} />
+          <label>InstructorId: </label>
+          <input type="text" name="instructorId" onChange={(e) => handleChange(e)} />
           <br/>
           <br/>
 
@@ -40,8 +40,8 @@ const NewInstructorView = (props) => {
           <br/>
           <br/>
         </form>
-        {error!=="" && <p> 
-                  <span style={{verticalAlign: "bottom", marginBottom: "2px"}}class="material-symbols-outlined">warning</span> 
+        {error!=="" && <p>
+                  <span style={{verticalAlign: "bottom", marginBottom: "2px"}}class="material-symbols-outlined">warning</span>
                   {" " + error}
                 </p>}
         </div>

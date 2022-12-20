@@ -36,7 +36,36 @@
     transform: rotate(360deg);
   }
 }
+a {
+    color: #fc0082
+}
 
 a:visited {
   color: #ab5b69;
 }
+
+input {
+    font-family: "Signika";
+    border-color: pink;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+label {
+    color: #11153e;
+    font-weight: bold;
+}
+
+select {
+    font-size: 20px;
+    font-family: "Signika";
+    border-radius: 5px;
+    border-color: pink;
+    background-color: white;
+}
+
+form {
+    text-align: center;
+}
+
+/* {{fontFamily: "Signika", borderRadius: "5px", borderColor: "pink"}} */

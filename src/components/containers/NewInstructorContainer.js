@@ -30,11 +30,11 @@ class NewInstructorContainer extends Component {
         event.preventDefault();
         //dont need ID because the instructor has not been created yet
         if(this.state.firstname===""){
-          this.setState({error:"Title field is required"});
+          this.setState({error:"First name is required"});
           return;
         }
         if(this.state.lastname===""){
-          this.setState({error:"Title field is required"});
+          this.setState({error:"Last name is required"});
           return;
         }
         let instructor = {

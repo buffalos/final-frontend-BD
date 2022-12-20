@@ -4,6 +4,7 @@ import { Redirect } from 'react-router-dom';
 
 import NewCourseView from '../views/NewCourseView';
 import { addCourseThunk } from '../../store/thunks';
+import { fetchAllInstructorsThunk } from '../../store/thunks';
 
 
 class NewCourseContainer extends Component {
@@ -20,10 +21,25 @@ class NewCourseContainer extends Component {
         };
     }
 
+    componentDidMount() {
+      this.props.fetchInstructors();
+      console.log("HIIIIIII");
+    }
+
     handleChange = event => {
       this.setState({
         [event.target.name]: event.target.value
       });
+    }
+
+    handleSelectChange = event => {
+      if (event.target.value === "staff"){
+        this.setState({instructorId: null});
+      } 
+      else{
+        this.setState({instructorId: event.target.value});
+      }
+      
     }
 
     handleSubmit = async event => {
@@ -60,18 +76,27 @@ class NewCourseContainer extends Component {
         }
         return (
           <NewCourseView 
+            instructors={this.props.allInstructors}
             handleChange={this.handleChange} 
             handleSubmit={this.handleSubmit}
+            handleSelectChange={this.handleSelectChange}
             error={this.state.error}      
           />
         );
     }
 }
 
+const mapState = (state) => {
+  return {
+    allInstructors: state.allInstructors
+  };
+};
+
 const mapDispatch = (dispatch) => {
     return({
         addCourse: (course) => dispatch(addCourseThunk(course)),
+        fetchInstructors: () => dispatch(fetchAllInstructorsThunk()),
     })
 }
 
-export default connect(null, mapDispatch)(NewCourseContainer);
+export default connect(mapState, mapDispatch)(NewCourseContainer);
