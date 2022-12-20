@@ -10,11 +10,11 @@ class EditCourseContainer extends Component {
     constructor(props){
         super(props);
         this.state = {
-          title: "", 
+          title: "",
           timeslot: "",
-          instructorId: null, 
+          instructorId: null,
           location: "",
-          redirect: false, 
+          redirect: false,
           redirectId: null
         };
     }
@@ -24,12 +24,12 @@ class EditCourseContainer extends Component {
         this.props.fetchCourse(this.props.match.params.id);
         this.props.fetchInstructors();
         this.setState({
-            title: this.props.course.title, 
+            title: this.props.course.title,
             timeslot: this.props.course.timeslot,
-            location: this.props.course.location, 
-            instructorId: this.props.course.instructorId, 
+            location: this.props.course.location,
+            instructorId: this.props.course.instructorId,
         });
-        
+
       }
 
     handleChange = event => {
@@ -41,11 +41,11 @@ class EditCourseContainer extends Component {
     handleSelectChange = event => {
       if (event.target.value === "staff"){
         this.setState({instructorId: null});
-      } 
+      }
       else{
         this.setState({instructorId: event.target.value});
       }
-      
+
     }
 
     handleSubmit = event => {
@@ -63,11 +63,11 @@ class EditCourseContainer extends Component {
             location: this.state.location,
             instructorId: this.state.instructorId
         };
-        
+
         this.props.editCourse(course);
 
         this.setState({
-          redirect: true, 
+          redirect: true,
           redirectId: this.props.course.id,
           error: ""
         });
@@ -79,7 +79,7 @@ class EditCourseContainer extends Component {
     }
 
     render() {
-      
+
         if(this.state.redirect) {
           return (<Redirect to={`/course/${this.state.redirectId}`}/>)
         }
@@ -87,24 +87,24 @@ class EditCourseContainer extends Component {
         return (
           <div>
           <h2 className={styles.subtitle}>
-            Edit Instructor
+            Edit Course
           </h2>
-            <form style={{textAlign: 'center'}} onSubmit={(e) => this.handleSubmit(e)}>
-            <label style= {{color:'#11153e', fontWeight: 'bold'}}>Title: </label>
-            <input style= {{fontFamily: "Signika", borderRadius: "5px", borderColor: "pink"}} type="text" name="title" value={this.state.title} onChange ={(e) => this.handleChange(e)}/>
+            <form onSubmit={(e) => this.handleSubmit(e)}>
+            <label> Title: </label>
+            <input type="text" name="title" value={this.state.title} onChange ={(e) => this.handleChange(e)}/>
             <br/>
             <br/>
-            <label style={{color:'#11153e', fontWeight: 'bold'}}>Timeslot: </label>
-            <input style= {{fontFamily: "Signika", borderRadius: "5px", borderColor: "pink"}} type="text" name="timeslot" value={this.state.timeslot} onChange={(e) => this.handleChange(e)}/>
-            <br/>
-            <br/>
-            
-            <label style={{color:'#11153e', fontWeight: 'bold'}}>Location: </label>
-            <input style= {{fontFamily: "Signika", borderRadius: "5px", borderColor: "pink"}} type="text" name="location" value={this.state.location} onChange={(e) => this.handleChange(e)} />
+            <label> Timeslot: </label>
+            <input type="text" name="timeslot" value={this.state.timeslot} onChange={(e) => this.handleChange(e)}/>
             <br/>
             <br/>
 
-            <select style= {{fontFamily: "Signika", borderRadius: "5px", borderColor: "pink", backgroundColor: "white"}} value={this.state.instructorId} onChange={(e) => this.handleSelectChange(e)}>
+            <label> Location: </label>
+            <input type="text" name="location" value={this.state.location} onChange={(e) => this.handleChange(e)} />
+            <br/>
+            <br/>
+            <label> Instructor: </label>
+            <select value={this.state.instructorId} onChange={(e) => this.handleSelectChange(e)}>
               if(course.instructor == null){
                 <option value="staff">Staff</option>
               }
@@ -112,17 +112,17 @@ class EditCourseContainer extends Component {
                 let name = `${instructor.firstname} ${instructor.lastname}`;
                 return (
                   <option key={instructor.id} value={instructor.id}>{name}</option>
-                );      
+                );
               })};
-              {/* {console.log("this.state.instructorId: " + this.state.instructorId)}; */}
+
             </select>
             <br/>
-  
+
             <button type="submit" className={styles.buttonmain} >
-              <span style={{verticalAlign: "middle"}}class="material-symbols-outlined">check_small</span>
+              <span style={{verticalAlign: "middle"}} class="material-symbols-outlined">check_small</span>
               Submit
             </button>
-            
+
           </form>
           {this.state.error!=="" && <p>{this.state.error}</p>}
           </div>

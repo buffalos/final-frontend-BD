@@ -35,7 +35,7 @@ const AllCoursesView = (props) => {
       )}
       <Link to={`/newcourse`}>
         <button className={styles.buttonmain}>
-        <span style={{verticalAlign: "bottom", paddingRight: "8px"}} class="material-symbols-outlined">library_add</span>
+        <span style={{verticalAlign: "middle", paddingRight: "8px"}} class="material-symbols-outlined">library_add</span>
           Add New Course</button>
       </Link>
     </div>
