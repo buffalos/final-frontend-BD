@@ -2,7 +2,8 @@ import styles from '../../mystyle.module.css';
 
 
 const NewCourseView = (props) => {
-  const {handleChange, handleSubmit, error } = props;
+  const {instructors, handleChange, handleSubmit, handleSelectChange, error } = props;
+ //let allInstructors = this.props.fetchInstructors(); 
 
   return (
     <div className="root">
@@ -28,10 +29,15 @@ const NewCourseView = (props) => {
           <br/>
           <br/>
 
-          <label style={{color:'#11153e', fontWeight: '600'}}>instructorId: </label>
-          <input style= {{fontFamily: "Signika", borderRadius: "5px", borderColor: "pink"}} type="text" name="instructorId" onChange={(e) => handleChange(e)} />
-          <br/>
-          <br/>
+          <select style= {{fontFamily: "Signika", borderRadius: "5px", borderColor: "pink", backgroundColor: "white"}} onChange={(e) => handleSelectChange(e)}>
+              {instructors.map((instructor) => {
+                let name = `${instructor.firstname} ${instructor.lastname}`;
+                return (
+                  <option key={instructor.id} value={instructor.id}>{name}</option>
+                );      
+              })};
+              {/* {console.log("this.state.instructorId: " + this.state.instructorId)}; */}
+            </select>
 
           <button type="submit" className={styles.button}>
           <span style={{verticalAlign: "middle"}}class="material-symbols-outlined">check_small</span>
