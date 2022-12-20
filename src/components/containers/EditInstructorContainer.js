@@ -40,6 +40,11 @@ class EditInstructorContainer extends Component {
     handleSubmit = event => {
         event.preventDefault();
 
+        if(this.state.firstname==="" && this.state.lastname===""){
+          this.setState({error:"First and last name are required"});
+          return;
+        }
+
         if(this.state.firstname===""){
           this.setState({error:"First name is required"});
           return;
