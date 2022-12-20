@@ -37,4 +37,3 @@ const CourseView = (props) => {
 };
 
 export default CourseView;
-//<Link to={`/instructor/${instructor.id}`}>

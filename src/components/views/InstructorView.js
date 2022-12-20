@@ -39,16 +39,22 @@ const InstructorView = (props) => {
 
       </div>
 
-      <Link to={`/editinstructor/${instructor.id}`}>
-      <button className={styles.buttonmain}>
-      <span style={{verticalAlign: "bottom", paddingRight: "5px", fontSize: "23px"}}class="material-symbols-outlined">edit</span>
-        Edit instructor information
+      <Link to={`/editinstructor/${instructor.id}`} style={{paddingRight: "7px"}}>
+        <button className={styles.buttonmain}>
+            <span style={{verticalAlign: "middle", paddingRight: "5px", fontSize: "23px"}}class="material-symbols-outlined">edit</span>
+            Edit instructor information
         </button>
-        </Link>
-      <br></br>
-      <button onClick={(e) => handleClick(e)} className={styles.button}>
-      <span style={{verticalAlign: "bottom", paddingRight: "5px", fontSize: "23px"}}class="material-symbols-outlined">delete</span>
-        Delete Instructor</button>
+      </Link>
+        <button onClick={(e) => handleClick(e)} className={styles.button}>
+            <span style={{verticalAlign: "middle", paddingRight: "5px", fontSize: "23px"}}class="material-symbols-outlined">delete</span>
+            Delete Instructor</button>
+      <br/>
+      <Link to={`/instructors`}>
+        <button className={styles.button}>
+            <span class="material-symbols-outlined" style={{verticalAlign: "middle", paddingRight: "8px"}}> groups </span>
+            View all instructors
+        </button>
+      </Link>
       </div>
   );
 } else {
@@ -75,16 +81,22 @@ const InstructorView = (props) => {
 
           </div>
 
-          <Link to={`/editinstructor/${instructor.id}`}>
-      <button className={styles.buttonmain}>
-      <span style={{verticalAlign: "bottom", paddingRight: "5px", fontSize: "23px"}}class="material-symbols-outlined">edit</span>
-        Edit instructor information
-        </button>
+          <Link to={`/editinstructor/${instructor.id}`} style={{paddingRight: "7px"}}>
+            <button className={styles.buttonmain}>
+                <span style={{verticalAlign: "middle", paddingRight: "5px", fontSize: "23px"}}class="material-symbols-outlined">edit</span>
+                Edit instructor information
+            </button>
+          </Link>
+           <button onClick={(e) => handleClick(e)} className={styles.button}>
+                <span style={{verticalAlign: "middle", paddingRight: "5px", fontSize: "23px"}}class="material-symbols-outlined">delete</span>
+                Delete Instructor</button>
+          <br/>
+          <Link to={`/instructors`}>
+            <button className={styles.button}>
+                <span class="material-symbols-outlined" style={{verticalAlign: "middle", paddingRight: "8px"}}> groups </span>
+                View all instructors
+            </button>
         </Link>
-          <br></br>
-          <button onClick={(e) => handleClick(e)} className={styles.button}>
-          <span style={{verticalAlign: "bottom", paddingRight: "5px", fontSize: "23px"}}class="material-symbols-outlined">delete</span>
-            Delete Instructor</button>
         </div>
     );
   }
